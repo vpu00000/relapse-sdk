@@ -1,0 +1,60 @@
+{
+  "name": "relapsesdk",
+  "version": "0.1.0",
+  "description": "Node.js SDK for building Relapse tools and frontends.",
+  "license": "GPL-3.0-or-later",
+  "author": "vpu007",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vpu00000/relapse-sdk.git"
+  },
+  "homepage": "https://github.com/vpu00000/relapse-sdk/tree/typescript#readme",
+  "bugs": {
+    "url": "https://github.com/vpu00000/relapse-sdk/issues"
+  },
+  "keywords": [
+    "relapse",
+    "sdk",
+    "typescript",
+    "nodejs",
+    "luau"
+  ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./profiles": {
+      "types": "./dist/profiles.d.ts",
+      "default": "./dist/profiles.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "examples",
+    "tsconfig.json"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "check": "tsc -p tsconfig.json --noEmit",
+    "example": "npm run build && node --experimental-strip-types examples/consumer.ts",
+    "prepack": "npm run build"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "@types/node": ">=22"
+  }
+}
